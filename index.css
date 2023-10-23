@@ -1,0 +1,23 @@
+body{
+  background-image: url('./image/back.jpg');
+  background-attachment: fixed;
+  background-size: contain;
+}
+.middle{
+    display: flex;
+    justify-content: center;
+  }
+
+  .hehe{
+    width: 60%;
+  }
+
+  .hehe img{
+    border-radius: 10px;
+  }
+
+  @media (max-width:1000px) {
+    .hehe{
+      width: 100%;
+    }
+  }

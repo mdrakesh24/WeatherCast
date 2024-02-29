@@ -1,8 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 body{
   background-image: url('./image/back.jpg');
   background-attachment: fixed;
   background-size: contain;
 }
+nav{
+  box-shadow: 0px 0px 5px black;
+}
+
+.logo {
+  font-family: "Anta", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 25px;
+  color: black;
+  text-decoration: none;
+  margin: 0px 50px;
+}
+
+.logo span{
+  color: royalblue;
+}
+
+.nav-link{
+  font-weight: 600;
+}
+
 .middle{
     display: flex;
     justify-content: center;
@@ -16,8 +40,16 @@ body{
     border-radius: 10px;
   }
 
+
+  /* **********************Responsive********************** */
   @media (max-width:1000px) {
     .hehe{
       width: 100%;
+    }
+  }
+
+  @media (max-width: 500px){
+    .logo{
+      margin: 0px;
     }
   }

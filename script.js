@@ -1,28 +1,24 @@
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '4f8f675e88msh7253e113d39c1c7p197cfcjsn74597b0657a2',
-		'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
-	}
-};
+
+const url = 'https://api.openweathermap.org/data/2.5/weather?q=';
+const api_key = '4fbe35ff48db9d833d16bf4a4779f22b';
+
 
 const getWeather = (city) =>{
 	cityName.innerHTML = city
-	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, options)
+	fetch(`${url}${city}&appid=${api_key}&units=metric&lang=en`)
 	.then(response => response.json())
 	.then(response => {
-		
 		console.log(response)
-		cloud_pct.innerHTML = response.cloud_pct
-		temp.innerHTML = response.temp
-		feels_like.innerHTML = response.feels_like
-		humidity.innerHTML = response.humidity
-		min_temp.innerHTML = response.min_temp
-		max_temp.innerHTML = response.max_temp
-		wind_speed.innerHTML = response.wind_speed
-		wind_degrees.innerHTML = response.wind_degrees
-		sunrise.innerHTML = response.sunrise
-		sunset.innerHTML = response.sunset
+		cloud_pct.innerHTML = response.clouds.all
+		temp.innerHTML = response.main.temp
+		feels_like.innerHTML = response.main.feels_like
+		humidity.innerHTML = response.main.humidity
+		min_temp.innerHTML = response.main.temp_min
+		max_temp.innerHTML = response.main.temp_max
+		wind_speed.innerHTML = response.wind.speed
+		wind_degrees.innerHTML = response.wind.deg
+		sunrise.innerHTML = response.sys.sunrise
+		sunset.innerHTML = response.sys.sunset
 	})
 	.catch(err => console.error(err));
 }
@@ -35,14 +31,14 @@ submit.addEventListener("click", (e)=>{
 getWeather("Kolkata");
 
 const getWeatherlondon = (city) =>{
-	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, options)
+	fetch(`${url}${city}&appid=${api_key}&units=metric&lang=en`)
 	.then(response => response.json())
 	.then(response => {
 		
 		console.log(response)
-		lontemp.innerHTML = response.temp
-		lonhumidity.innerHTML = response.humidity
-		lonwind_speed.innerHTML = response.wind_speed
+		lontemp.innerHTML = response.main.temp
+		lonhumidity.innerHTML = response.main.humidity
+		lonwind_speed.innerHTML = response.wind.speed
 	})
 	.catch(err => console.error(err));
 }
@@ -50,14 +46,14 @@ const getWeatherlondon = (city) =>{
 getWeatherlondon("London");
 
 const getWeathercal = (city) =>{
-	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, options)
+	fetch(`${url}${city}&appid=${api_key}&units=metric&lang=en`)
 	.then(response => response.json())
 	.then(response => {
 		
 		console.log(response)
-		caltemp.innerHTML = response.temp
-		calhumidity.innerHTML = response.humidity
-		calwind_speed.innerHTML = response.wind_speed
+		caltemp.innerHTML = response.main.temp
+		calhumidity.innerHTML = response.main.humidity
+		calwind_speed.innerHTML = response.wind.speed
 	})
 	.catch(err => console.error(err));
 }
@@ -65,14 +61,14 @@ const getWeathercal = (city) =>{
 getWeathercal("California");
 
 const getWeathersyd = (city) =>{
-	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, options)
+	fetch(`${url}${city}&appid=${api_key}&units=metric&lang=en`)
 	.then(response => response.json())
 	.then(response => {
 		
 		console.log(response)
-		sydtemp.innerHTML = response.temp
-		sydhumidity.innerHTML = response.humidity
-		sydwind_speed.innerHTML = response.wind_speed
+		sydtemp.innerHTML = response.main.temp
+		sydhumidity.innerHTML = response.main.humidity
+		sydwind_speed.innerHTML = response.wind.speed
 	})
 	.catch(err => console.error(err));
 }
@@ -80,12 +76,12 @@ const getWeathersyd = (city) =>{
 getWeathersyd("Sydney");
 
 const getWeatherkol = (city) =>{
-	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, options)
+	fetch(`${url}${city}&appid=${api_key}&units=metric&lang=en`)
 	.then(response => response.json())
 	.then(response => {
 		
 		console.log(response)
-		koltemp.innerHTML = response.temp
+		koltemp.innerHTML = response.main.temp
 	})
 	.catch(err => console.error(err));
 }
@@ -93,12 +89,12 @@ const getWeatherkol = (city) =>{
 getWeatherkol("Kolkata");
 
 const getWeatherdel = (city) =>{
-	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, options)
+	fetch(`${url}${city}&appid=${api_key}&units=metric&lang=en`)
 	.then(response => response.json())
 	.then(response => {
 		
 		console.log(response)
-		deltemp.innerHTML = response.temp
+		deltemp.innerHTML = response.main.temp
 	})
 	.catch(err => console.error(err));
 }
@@ -106,12 +102,12 @@ const getWeatherdel = (city) =>{
 getWeatherdel("Delhi");
 
 const getWeathermum = (city) =>{
-	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, options)
+	fetch(`${url}${city}&appid=${api_key}&units=metric&lang=en`)
 	.then(response => response.json())
 	.then(response => {
 		
 		console.log(response)
-		mumtemp.innerHTML = response.temp
+		mumtemp.innerHTML = response.main.temp
 	})
 	.catch(err => console.error(err));
 }
